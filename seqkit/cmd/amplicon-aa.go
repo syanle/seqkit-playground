@@ -44,8 +44,8 @@ import (
 	"github.com/twotwotwo/sorts/sortutil"
 )
 
-// amplicon-aaCmd represents the amplicon command
-var amplicon-aaCmd = &cobra.Command{
+// ampliconaaCmd represents the amplicon command
+var ampliconaaCmd = &cobra.Command{
 	Use:   "amplicon",
 	Short: "extract amplicon (or specific region around it) via primer(s)",
 	Long: `extract amplicon (or specific region around it) via primer(s).
@@ -518,21 +518,21 @@ Examples:
 }
 
 func init() {
-	RootCmd.AddCommand(amplicon-aaCmd)
+	RootCmd.AddCommand(ampliconaaCmd)
 
-	amplicon-aaCmd.Flags().StringP("forward", "F", "", "forward primer (5'-primer-3'), degenerate bases allowed")
-	amplicon-aaCmd.Flags().StringP("reverse", "R", "", "reverse primer (5'-primer-3'), degenerate bases allowed")
-	amplicon-aaCmd.Flags().IntP("max-mismatch", "m", 0, "max mismatch when matching primers, no degenerate bases allowed")
-	amplicon-aaCmd.Flags().BoolP("output-mismatches", "M", false, "append the total mismatches and mismatches of 5' end and 3' end")
-	amplicon-aaCmd.Flags().StringP("primer-file", "p", "", "3- or 2-column tabular primer file, with first column as primer name")
+	ampliconaaCmd.Flags().StringP("forward", "F", "", "forward primer (5'-primer-3'), degenerate bases allowed")
+	ampliconaaCmd.Flags().StringP("reverse", "R", "", "reverse primer (5'-primer-3'), degenerate bases allowed")
+	ampliconaaCmd.Flags().IntP("max-mismatch", "m", 0, "max mismatch when matching primers, no degenerate bases allowed")
+	ampliconaaCmd.Flags().BoolP("output-mismatches", "M", false, "append the total mismatches and mismatches of 5' end and 3' end")
+	ampliconaaCmd.Flags().StringP("primer-file", "p", "", "3- or 2-column tabular primer file, with first column as primer name")
 
-	amplicon-aaCmd.Flags().StringP("region", "r", "", `specify region to return. type "seqkit amplicon -h" for detail`)
-	amplicon-aaCmd.Flags().BoolP("flanking-region", "f", false, "region is flanking region")
-	amplicon-aaCmd.Flags().BoolP("strict-mode", "s", false, "strict mode, i.e., discarding seqs not fully matching (shorter) given region range")
-	amplicon-aaCmd.Flags().BoolP("only-positive-strand", "P", false, "only search on positive strand")
-	amplicon-aaCmd.Flags().BoolP("bed", "", false, "output in BED6+1 format with amplicon as the 7th column")
-	amplicon-aaCmd.Flags().BoolP("immediate-output", "I", false, "print output immediately, do not use write buffer")
-	amplicon-aaCmd.Flags().BoolP("save-unmatched", "u", false, "also save records that do not match any primer")
+	ampliconaaCmd.Flags().StringP("region", "r", "", `specify region to return. type "seqkit amplicon -h" for detail`)
+	ampliconaaCmd.Flags().BoolP("flanking-region", "f", false, "region is flanking region")
+	ampliconaaCmd.Flags().BoolP("strict-mode", "s", false, "strict mode, i.e., discarding seqs not fully matching (shorter) given region range")
+	ampliconaaCmd.Flags().BoolP("only-positive-strand", "P", false, "only search on positive strand")
+	ampliconaaCmd.Flags().BoolP("bed", "", false, "output in BED6+1 format with amplicon as the 7th column")
+	ampliconaaCmd.Flags().BoolP("immediate-output", "I", false, "print output immediately, do not use write buffer")
+	ampliconaaCmd.Flags().BoolP("save-unmatched", "u", false, "also save records that do not match any primer")
 }
 
 // only used in this command
