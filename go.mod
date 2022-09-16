@@ -1,4 +1,4 @@
-module github.com/shenwei356/seqkit/v2
+module github.com/syanle/seqkit-playground/v2
 
 go 1.17
 
