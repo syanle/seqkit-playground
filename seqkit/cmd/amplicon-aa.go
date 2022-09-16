@@ -536,7 +536,7 @@ func init() {
 }
 
 // only used in this command
-func ampliconaa_mismatches(s1, s2 []byte) int {
+func amplicon_mismatches(s1, s2 []byte) int {
 	var n int
 	for i, a := range s1 {
 		if a != s2[i] {
